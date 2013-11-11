@@ -10,6 +10,11 @@ lib-cov
 pids
 logs
 results
+tmp
+temp
+TODO.md
+
+*.sublime-*
 
 npm-debug.log
 node_modules

@@ -1,0 +1,26 @@
+{
+  "name": "assemble-anchor",
+  "version": "0.0.1",
+  "description": "Assemble plugin for creating anchor tags from generated html.",
+  "main": "assemble-anchor.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/assemble/assemble-anchor"
+  },
+  "keywords": [
+    "assemble",
+    "plugin",
+    "anchor"
+  ],
+  "author": "Brian Woodward",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/assemble/assemble-anchor/issues"
+  },
+  "dependencies": {
+    "cheerio": "~0.12.3"
+  }
+}
