@@ -1,4 +1,4 @@
-# assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors)  [![Build Status](true.png)](true)
+# assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors)
 
 > Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.
 
