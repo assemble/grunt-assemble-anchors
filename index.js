@@ -27,7 +27,7 @@ module.exports = function(params, callback) {
   var $ = cheerio.load(content);
 
   // get all the h tags with an id
-  var headings = $('h1,h2,h3,h4[id]');
+  var headings = $('h1[id],h2[id],h3[id],h4[id]');
   headings.map(function(i, e) {
     if(e.attribs.id) {
       var anchor = [
