@@ -1,5 +1,5 @@
 /*
- * Assemble Contrib Plugin: Anchor
+ * Assemble Contrib Plugin: Anchors
  * https://github.com/assemble/assemble-contrib-anchors
  * Assemble is the 100% JavaScript static site generator for Node.js, Grunt.js, and Yeoman.
  *
