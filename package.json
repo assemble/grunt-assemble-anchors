@@ -1,6 +1,6 @@
 {
   "name": "assemble-contrib-anchors",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.",
   "main": "index.js",
   "repository": {
@@ -20,6 +20,10 @@
   "bugs": {
     "url": "https://github.com/assemble/assemble-contrib-anchors/issues"
   },
+  "devDependencies": {
+    "grunt-repos": "~0.1.2",
+    "grunt-readme": "~0.4.0"
+  },
   "dependencies": {
     "cheerio": "~0.12.3"
   },
@@ -27,6 +31,12 @@
     "assemble",
     "assembleplugin",
     "plugin",
-    "anchor"
+    "cheerio anchor",
+    "markdown anchor",
+    "anchor",
+    "anchor links",
+    "anchor icon",
+    "anchor tag",
+    "anchors"
   ]
 }

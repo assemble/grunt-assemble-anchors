@@ -1,9 +1,6 @@
 /*
- * Assemble Contrib Plugin: Anchors
- * https://github.com/assemble/assemble-contrib-anchors
- * Assemble is the 100% JavaScript static site generator for Node.js, Grunt.js, and Yeoman.
- *
- * Copyright (c) 2013 Jon Schlinkert, Brian Woodward, contributors.
+ * assemble-contrib-anchors
+ * Copyright (c) 2013 Brian Woodward, contributors.
  * Licensed under the MIT license.
  */
 
@@ -23,6 +20,9 @@ module.exports = function(params, callback) {
 
   var content = params.content;
 
+  var opts = params.assemble.options;
+  opts.anchors = opts.anchors || {};
+
   // load current page content
   var $ = cheerio.load(content);
 
@@ -32,10 +32,12 @@ module.exports = function(params, callback) {
     if(e.attribs.id) {
       var anchor = [
         '<a href="#' + e.attribs.id + '" name="' + e.attribs.id + '" class="anchor">',
+        '  <span class="anchor-target" id="' + e.attribs.id + '"></span>',
         '  <span class="glyphicon glyphicon-link"></span>',
         '</a>\n'
       ].join('\n');
       $(this).append(anchor);
+      $(this).removeAttr('id').addClass('docs-heading');
     }
   });
 

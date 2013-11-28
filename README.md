@@ -1,61 +1,129 @@
-# assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors)
+# assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors) 
 
 > Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.
 
-## Before
+# Quickstart
+In the command line, run:
+
+```bash
+npm install assemble-contrib-anchors --save
+```
+
+Next, register the plugin with Assemble in your project's Gruntfile:
+
+```js
+assemble: {
+  options: {
+    plugins: ['assemble-contrib-anchors', 'other/plugins/*']
+  }
+}
+```
+
+### Configuration
+
+You can also use the plugin with specific targets:
+
+```js
+assemble: {
+  foo: {
+    options: {
+      plugins: ['assemble-contrib-anchors'],
+      layout: 'blog-post.hbs'
+    },
+    files: {'dist/': 'content/*.md'}
+  },
+  // The plugin won't run on this target
+  bar: {
+    files: {'dist/': 'templates/*.hbs'}
+  }
+}
+```
+
+To disable the plugin, either remove it from the options or specify `anchors: {convert: false}` in the options:
+
+```js
+assemble: {
+  foo: {
+    options: {
+      plugins: ['assemble-contrib-anchors'],
+      anchors: {convert: false}
+    },
+    files: {'dist/': 'content/*.md'}
+  }
+}
+```
+Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
+
+
+# Examples
+### Before
 
 ```html
 <h1 id="glyphicons">Glyphicons</h1>
 ```
-
-## After
+### After
 
 ```html
-<h1 id="glyphicons">Glyphicons
-  <a name="glyphicons" class="anchor" href="#glyphicons">
+<h1 class="docs-heading">
+  <a href="#heading-id-name" name="heading-id-name" class="anchor">
+    <span class="anchor-target" id="heading-id-name"></span>
     <span class="glyphicon glyphicon-link"></span>
   </a>
+  Glyphicons
 </h1>
 ```
-
 Currently the plugin adds [Bootstrap](http://getbootstrap.com/components/#glyphicons) glyphicon classes. If you want to use different classes, find a bug, or have a feature request, [plesae create an issue](https://github.com/assemble/assemble-contrib-anchors/issues/new)
 
-
-## Example
+### Example
 
 [![image](https://f.cloud.github.com/assets/383994/1511486/c2414c4e-4aaf-11e3-9c16-30f2993ae2d7.png)](http://assemble.github.io/example-assemble-anchors/components.html#glyphicons)
-
 
 Visit the [anchors example repo](https://github.com/assemble/example-assemble-anchors).
 
 
-## Quick start
 
-The following quick start options are available:
+## Assemble plugins
+Here are some related projects you might be interested in from the [Assemble](http://assemble.io) core team.
 
-* `npm install assemble-contrib-anchors --save`.
-* Install with [Bower](http://bower.io): `bower install assemble-contrib-anchors`.
-* Clone the repo: `git clone https://github.com/assemble/assemble-contrib-anchors.git`.
-* [Download the latest release](https://github.com/assemble/assemble-contrib-anchors/archive/master.zip).
++ [assemble-contrib-contextual](https://github.com/assemble/assemble-contrib-contextual): Generates a JSON file containing the context of each page. Basic plugin to help see what's happening in the build. 
++ [assemble-contrib-decompress](https://github.com/assemble/assemble-contrib-decompress): Assemble plugin for extracting zip, tar and tar.gz archives.  
++ [assemble-contrib-download](https://github.com/assemble/assemble-contrib-download): Assemble plugin for downloading files from GitHub. 
++ [assemble-contrib-lunr](https://github.com/assemble/assemble-contrib-lunr): Assemble plugin for creating a search engine within your static site using lunr.js. 
++ [assemble-contrib-markdown](https://github.com/assemble/assemble-contrib-markdown): Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios. 
++ [assemble-contrib-permalinks](https://github.com/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more. 
++ [assemble-contrib-sitemap](https://github.com/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble 
++ [assemble-contrib-toc](https://github.com/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js 
++ [assemble-contrib-wordcount](https://github.com/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages. 
+Visit [assemble.io/plugins](http:/assemble.io/plugins/) for more information about [Assemble](http:/assemble.io/) plugins.
+
 
 
 ## Contributing
+Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble/issues/new). Pull requests are also encouraged.
+If you find this project useful, please consider "starring" it to show your support! Thanks!
 
-Please read through the [contributing guidelines](CONTRIBUTING.md). In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
+## Authors
 
-Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at [http://editorconfig.org](http://editorconfig.org).
+**Jon Schlinkert**
 
-## Release History
++ [github/jonschlinkert](https://github.com/jonschlinkert)
++ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
 
- * 2013   v0.1.0   First commit
+**Brian Woodward**
+
++ [github/doowb](https://github.com/doowb)
++ [twitter/doowb](http://twitter.com/jonschlinkert)
+
 
 ## License
-Copyright (c) 2013 Brian Woodward
-Licensed under the [MIT license](LICENSE-MIT).
-
+Copyright (c) 2013 Brian Woodward, contributors.
+Released under the MIT license
 
 ***
 
-Project created by [Brian Woodward](https://github.com/doowb).
+_This file was generated by [grunt-readme](https://github.com/assemble/grunt-readme) on Thursday, November 28, 2013._
 
-_This file was generated on Sun Nov 10 2013 22:27:53._
+[grunt]: http://gruntjs.com/
+[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
+[package.json]: https://npmjs.org/doc/json.html
+
