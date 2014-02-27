@@ -19,6 +19,16 @@ module.exports = function(grunt) {
       }
     },
 
+    assemble: {
+      options: {
+        layout: 'test/fixtures/layout.hbs',
+        plugins: ['./index.js'],
+      },
+      test: {
+        src: ['README.md'],
+        dest: 'test/actual/'
+      }
+    },
 
     /**
      * Pull down a list of repos from Github.
@@ -52,6 +62,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-readme');
   grunt.loadNpmTasks('grunt-repos');
+  grunt.loadNpmTasks('assemble');
 
 
   // By default, lint and run all tests.

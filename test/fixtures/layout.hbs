@@ -1,0 +1,26 @@
+{{#prettify}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            {{! SIDENAV }}
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+          {{#markdown}}
+            {{> body }}
+          {{/markdown}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{{/prettify}}

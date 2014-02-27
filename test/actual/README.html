@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container bs-docs-container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="bs-sidebar hidden-print" role="complementary">
+        </div>
+      </div>
+      <div class="col-md-9" role="main">
+        <pre>
+          <code># assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors)</code>
+        </pre>
+        <blockquote>
+          <p>Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.</p>
+        </blockquote>
+        <h2 class="docs-heading">Quickstart
+          <a href="#quickstart" name="quickstart" class="anchor">
+            <span class="anchor-target" id="quickstart"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <p>In the command line, run:</p>
+        <pre>
+          <code class="language-bash">npm install assemble-contrib-anchors --save</code>
+        </pre>
+        <p>Next, register the plugin with Assemble in your project&#39;s Gruntfile:</p>
+        <pre>
+          <code class="language-js">assemble: { options: { plugins: [
+            <span class="string">'assemble-contrib-anchors'</span>,
+            <span class="string">'other/plugins /*'
+            </span>] } }
+          </code>
+        </pre>
+        <h3 class="docs-heading">Configuration
+          <a href="#configuration" name="configuration" class="anchor">
+            <span class="anchor-target" id="configuration"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h3>
+        <p>You can also use the plugin with specific targets:</p>
+        <pre>
+          <code class="language-js">assemble: { foo: { options: { plugins: [
+            <span class="string">'assemble-contrib-anchors'</span>], layout:
+            <span class="string">'blog-post.hbs'</span>
+            }, files: {
+            <span class="string">'dist/'</span>:
+            <span class="string">'content /*.md'
+            </span>} },
+            <span class="comment">// The plugin won't run on this target</span>
+            bar: { files: {
+            <span class="string">'dist/'</span>:
+            <span class="string">'templates /*.hbs'
+            </span>} } }
+          </code>
+        </pre>
+        <p>To disable the plugin, either remove it from the options or specify
+          <code>anchors: {convert: false}</code>in the options:</p>
+        <pre>
+          <code class="language-js">assemble: { foo: { options: { plugins: [
+            <span class="string">'assemble-contrib-anchors'</span>], anchors: {convert:
+            <span class="literal">false</span>} }, files: {
+            <span class="string">'dist/'</span>:
+            <span class="string">'content /*.md'
+            </span>} } }
+          </code>
+        </pre>
+        <p>Visit the
+          <a href="http://assemble.io/plugins/">plugins docs</a>for more info or for help getting started.</p>
+        <h2 class="docs-heading">Examples
+          <a href="#examples" name="examples" class="anchor">
+            <span class="anchor-target" id="examples"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <h3 class="docs-heading">Before
+          <a href="#before" name="before" class="anchor">
+            <span class="anchor-target" id="before"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h3>
+        <pre>
+          <code class="language-html">&lt;h1 id=&quot;glyphicons&quot;&gt;Glyphicons&lt;/h1&gt;</code>
+        </pre>
+        <h3 class="docs-heading">After
+          <a href="#after" name="after" class="anchor">
+            <span class="anchor-target" id="after"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h3>
+        <pre>
+          <code class="language-html">&lt;h1 class=&quot;docs-heading&quot;&gt; &lt;a href=&quot;#heading-id-name&quot; name=&quot;heading-id-name&quot; class=&quot;anchor&quot;&gt; &lt;span class=&quot;anchor-target&quot; id=&quot;heading-id-name&quot;&gt;&lt;/span&gt; &lt;span class=&quot;glyphicon glyphicon-link&quot;&gt;&lt;/span&gt; &lt;/a&gt; Glyphicons &lt;/h1&gt;
+          </code>
+        </pre>
+        <p>Currently the plugin adds
+          <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap</a>glyphicon classes. If you want to use different classes, find a bug, or have a feature request,
+          <a href="https://github.com/assemble/assemble-contrib-anchors/issues/new">plesae create an issue</a>
+        </p>
+        <h3 class="docs-heading">Example
+          <a href="#example" name="example" class="anchor">
+            <span class="anchor-target" id="example"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h3>
+        <p>
+          <a href="http://assemble.github.io/example-assemble-anchors/components.html#glyphicons">
+            <img src="https://f.cloud.github.com/assets/383994/1511486/c2414c4e-4aaf-11e3-9c16-30f2993ae2d7.png" alt="image">
+          </a>
+        </p>
+        <p>Visit the
+          <a href="https://github.com/assemble/example-assemble-anchors">anchors example repo</a>.</p>
+        <h2 class="docs-heading">Assemble plugins
+          <a href="#assemble-plugins" name="assemble-plugins" class="anchor">
+            <span class="anchor-target" id="assemble-plugins"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <p>Here are some related projects you might be interested in from the
+          <a href="http://assemble.io">Assemble</a>core team.</p>
+        <ul>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-contextual">assemble-contrib-contextual</a>: Generates a JSON file containing the context of each page. Basic plugin to help see what&#39;s happening in the build.</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-decompress">assemble-contrib-decompress</a>: Assemble plugin for extracting zip, tar and tar.gz archives.</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-download">assemble-contrib-download</a>: Assemble plugin for downloading files from GitHub.</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-lunr">assemble-contrib-lunr</a>: Assemble plugin for creating a search engine within your static site using lunr.js.</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-markdown">assemble-contrib-markdown</a>: Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble&#39;s markdown Handlebars helpers. Both are useful in different scenarios.</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-permalinks">assemble-contrib-permalinks</a>: Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more.
+          </li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-sitemap">assemble-contrib-sitemap</a>: Sitemap generator plugin for Assemble</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-toc">assemble-contrib-toc</a>: Create a table of contents in the generated HTML, using Cheerio.js</li>
+          <li>
+            <a href="https://github.com/assemble/assemble-contrib-wordcount">assemble-contrib-wordcount</a>: Assemble plugin for displaying a word-count on blog posts or pages. Visit
+            <a href="http:/assemble.io/plugins/">assemble.io/plugins</a>for more information about
+            <a href="http:/assemble.io/">Assemble</a>plugins.</li>
+        </ul>
+        <h2 class="docs-heading">Contributing
+          <a href="#contributing" name="contributing" class="anchor">
+            <span class="anchor-target" id="contributing"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <p>Find a bug? Have a feature request? Please
+          <a href="https://github.com/assemble/assemble-contrib-anchors/issues">create an Issue</a>. Pull requests are also encouraged. If you find this project useful, please consider &quot;starring&quot; it to show your support! Thanks!</p>
+        <h2 class="docs-heading">Authors
+          <a href="#authors" name="authors" class="anchor">
+            <span class="anchor-target" id="authors"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <p>
+          <strong>Jon Schlinkert</strong>
+        </p>
+        <ul>
+          <li>
+            <a href="https://github.com/jonschlinkert">github/jonschlinkert</a>
+          </li>
+          <li>
+            <a href="http://twitter.com/jonschlinkert">twitter/jonschlinkert</a>
+          </li>
+        </ul>
+        <p>
+          <strong>Brian Woodward</strong>
+        </p>
+        <ul>
+          <li>
+            <a href="https://github.com/doowb">github/doowb</a>
+          </li>
+          <li>
+            <a href="http://twitter.com/jonschlinkert">twitter/doowb</a>
+          </li>
+        </ul>
+        <h2 class="docs-heading">License
+          <a href="#license" name="license" class="anchor">
+            <span class="anchor-target" id="license"></span>
+            <span class="glyphicon glyphicon-link"></span>
+          </a>
+        </h2>
+        <p>Copyright (c) 2014 Brian Woodward, contributors. Released under the MIT license</p>
+        <hr>
+        <p>
+          <em>This file was generated by <a href="https://github.com/assemble/grunt-readme">grunt-readme</a> on Monday, January 27, 2014.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
