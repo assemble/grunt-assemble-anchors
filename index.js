@@ -1,5 +1,5 @@
 /*
- * assemble-contrib-anchors
+ * assemble-middleware-anchors
  * Copyright (c) 2013 Brian Woodward, contributors.
  * Licensed under the MIT license.
  */
@@ -12,11 +12,11 @@ var template = require('template');
 module.exports = function (assemble) {
 
   /**
-   * Anchor Plugin
+   * Anchor Middleware
    * @param  {Object}   params
    * @param  {Function} next
    */
-  var plugin = function (params, next) {
+  var middleware = function (params, next) {
     'use strict';
 
     var opts = assemble.options.anchors || {};
@@ -47,15 +47,17 @@ module.exports = function (assemble) {
     next();
   };
 
-  // Define plugin options for Assemble
-  plugin.options = {
-    name: 'assemble-plugin-anchors',
-    events: [
-      'page:after:render'
-    ]
+  // Define middleware options for Assemble
+  //middleware.options = {
+  //  name: 'assemble-middleware-anchors',
+  //  events: [
+  //    'page:after:render'
+  //  ]
+  //};
+  middleware.event = 'page:after:render';
+
+  return {
+    'assemble-middleware-anchors': middleware
   };
 
-  var rtn = {};
-  rtn[plugin.options.name] = plugin;
-  return rtn;
 };

@@ -1,11 +1,11 @@
 {
-  "name": "assemble-contrib-anchors",
+  "name": "assemble-middleware-anchors",
   "version": "0.2.2",
   "description": "Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/assemble/assemble-contrib-anchors"
+    "url": "https://github.com/assemble/assemble-middleware-anchors"
   },
   "author": {
     "name": "Brian Woodward",
@@ -14,11 +14,11 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/assemble-contrib-anchors/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/assemble-middleware-anchors/blob/master/LICENSE-MIT"
     }
   ],
   "bugs": {
-    "url": "https://github.com/assemble/assemble-contrib-anchors/issues"
+    "url": "https://github.com/assemble/assemble-middleware-anchors/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
