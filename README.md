@@ -19,6 +19,43 @@ assemble: {
 }
 ```
 
+## Options
+#### template
+
+Specify a custom template (Underscore/Lo-Dash) to use for anchor markup. This is the default template:
+
+```js
+module.exports = [
+  '<a href="#<%= id %>" name="<%= id %>" class="anchor">',
+  '  <span class="anchor-target" id="<%= id %>"></span>',
+  '  <span class="glyphicon glyphicon-link"></span>',
+  '</a>'
+].join('\n');
+```
+
+To use a custom template just specify it in the options as follows:
+
+```js
+assemble: {
+  foo: {
+    options: {
+      plugins: ['assemble-contrib-anchors'],
+      function (name, options) {
+    var opts = _.extend({}, verb.options, options || {});
+    return verb.utils.safename(name, opts);
+  }: {
+        template: './path/to/custom/template.js'
+      }
+    },
+    files: {'dist/': 'content/*.md'}
+  }
+}
+```
+
+
+Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
+
+## Examples
 ### Configuration
 
 You can also use the plugin with specific targets:
@@ -39,23 +76,26 @@ assemble: {
 }
 ```
 
-To disable the plugin, either remove it from the options or specify `anchors: {convert: false}` in the options:
+To disable the plugin, either remove it from the options or specify `function (name, options) {
+    var opts = _.extend({}, verb.options, options || {});
+    return verb.utils.safename(name, opts);
+  }: {convert: false}` in the options:
 
 ```js
 assemble: {
   foo: {
     options: {
       plugins: ['assemble-contrib-anchors'],
-      anchors: {convert: false}
+      function (name, options) {
+    var opts = _.extend({}, verb.options, options || {});
+    return verb.utils.safename(name, opts);
+  }: {convert: false}
     },
     files: {'dist/': 'content/*.md'}
   }
 }
 ```
-Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
 
-
-## Examples
 ### Before
 
 ```html
@@ -81,50 +121,41 @@ Currently the plugin adds [Bootstrap](http://getbootstrap.com/components/#glyphi
 Visit the [anchors example repo](https://github.com/assemble/example-assemble-anchors).
 
 
-
 ## Assemble plugins
 Here are some related projects you might be interested in from the [Assemble](http://assemble.io) core team.
 
-+ [assemble-contrib-contextual](https://github.com/assemble/assemble-contrib-contextual): Generates a JSON file containing the context of each page. Basic plugin to help see what's happening in the build.
-+ [assemble-contrib-decompress](https://github.com/assemble/assemble-contrib-decompress): Assemble plugin for extracting zip, tar and tar.gz archives.
-+ [assemble-contrib-download](https://github.com/assemble/assemble-contrib-download): Assemble plugin for downloading files from GitHub.
-+ [assemble-contrib-lunr](https://github.com/assemble/assemble-contrib-lunr): Assemble plugin for creating a search engine within your static site using lunr.js.
-+ [assemble-contrib-markdown](https://github.com/assemble/assemble-contrib-markdown): Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios.
-+ [assemble-contrib-permalinks](https://github.com/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more.
-+ [assemble-contrib-sitemap](https://github.com/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble
-+ [assemble-contrib-toc](https://github.com/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js
-+ [assemble-contrib-wordcount](https://github.com/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages.
++ [assemble-contrib-contextual](https://github.com/assemble/assemble-contrib-contextual): Generates a JSON file containing the context of each page. Basic plugin to help see what's happening in the build. 
++ [assemble-contrib-decompress](https://github.com/assemble/assemble-contrib-decompress): Assemble plugin for extracting zip, tar and tar.gz archives.  
++ [assemble-contrib-download](https://github.com/assemble/assemble-contrib-download): Assemble plugin for downloading files from GitHub. 
++ [assemble-contrib-lunr](https://github.com/assemble/assemble-contrib-lunr): Assemble plugin for creating a search engine within your static site using lunr.js. 
++ [assemble-contrib-markdown](https://github.com/assemble/assemble-contrib-markdown): Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios. 
++ [assemble-contrib-permalinks](https://github.com/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more. 
++ [assemble-contrib-sitemap](https://github.com/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble 
++ [assemble-contrib-toc](https://github.com/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js 
++ [assemble-contrib-wordcount](https://github.com/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages. 
+
 Visit [assemble.io/plugins](http:/assemble.io/plugins/) for more information about [Assemble](http:/assemble.io/) plugins.
 
 
-
 ## Contributing
-Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble-contrib-anchors/issues). Pull requests are also encouraged.
-If you find this project useful, please consider "starring" it to show your support! Thanks!
+Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble-contrib-anchors/issues).
 
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality,
+and run `docs` in the command line to build the docs with [Verb](https://github.com/assemble/verb).
 
-## Authors
+Pull requests are also encouraged, and if you find this project useful please consider "starring" it to show your support! Thanks!
 
-**Jon Schlinkert**
-
-+ [github/jonschlinkert](https://github.com/jonschlinkert)
-+ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
+## Author
 
 **Brian Woodward**
 
 + [github/doowb](https://github.com/doowb)
 + [twitter/doowb](http://twitter.com/jonschlinkert)
 
-
 ## License
-Copyright (c) 2014 Brian Woodward, contributors.
+Copyright (c) 2014 Brian Woodward, contributors.  
 Released under the MIT license
 
 ***
 
-_This file was generated by [grunt-readme](https://github.com/assemble/grunt-readme) on Monday, January 27, 2014._
-
-[grunt]: http://gruntjs.com/
-[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
-[package.json]: https://npmjs.org/doc/json.html
-
+_This file was generated by [grunt-verb](https://github.com/assemble/grunt-verb) on May 01, 2014._
