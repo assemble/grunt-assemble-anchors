@@ -25,7 +25,8 @@
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-readme": "~0.4.0",
     "grunt-repos": "~0.1.2",
-    "handlebars-helper-prettify": "~0.2.1"
+    "handlebars-helper-prettify": "~0.2.1",
+    "grunt-verb": "~0.2.2"
   },
   "dependencies": {
     "cheerio": "~0.12.4",

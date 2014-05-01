@@ -45,26 +45,16 @@ module.exports = function(grunt) {
           'docs/repos.json': ['repos?page=1&per_page=100']
         }
       }
-    },
-
-    /**
-     * Extend context for templates
-     * with repos.json
-     */
-    readme: {
-      options: {
-        metadata: ['docs/repos.json']
-      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-readme');
+  grunt.loadNpmTasks('grunt-verb');
   grunt.loadNpmTasks('grunt-repos');
   grunt.loadNpmTasks('assemble');
 
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'readme']);
+  grunt.registerTask('default', ['jshint', 'verb']);
 };
