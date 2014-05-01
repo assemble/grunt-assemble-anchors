@@ -1,11 +1,11 @@
 {
-  "name": "assemble-plugin-anchors",
+  "name": "assemble-contrib-anchors",
   "version": "0.1.2",
   "description": "Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/assemble/assemble-plugin-anchors"
+    "url": "https://github.com/assemble/assemble-contrib-anchors"
   },
   "author": {
     "name": "Brian Woodward",
@@ -14,32 +14,39 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/assemble-plugin-anchors/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/assemble-contrib-anchors/blob/master/LICENSE-MIT"
     }
   ],
   "bugs": {
-    "url": "https://github.com/assemble/assemble-plugin-anchors/issues"
+    "url": "https://github.com/assemble/assemble-contrib-anchors/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-assemble": "~0.1.11",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-verb": "~0.2.1",
-    "handlebars-helper-prettify": "~0.2.1"
+    "assemble": "~0.4.35",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-readme": "~0.4.0",
+    "grunt-repos": "~0.1.2",
+    "handlebars-helper-prettify": "~0.2.1",
+    "grunt-verb": "~0.2.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cheerio": "~0.12.4",
+    "lodash": "~2.4.1",
+    "template": "~0.1.5"
+  },
   "keywords": [
+    "anchor icon",
+    "anchor links",
+    "anchor tag",
     "anchor",
     "anchors",
     "assemble",
     "assembleplugin",
-    "cheerio",
+    "cheerio anchor",
     "handlebars-helper-prettify",
+    "html anchor",
+    "html links",
     "html",
-    "icon",
-    "links",
-    "markdown",
-    "plugin",
-    "tag"
+    "markdown anchor",
+    "plugin"
   ]
 }
