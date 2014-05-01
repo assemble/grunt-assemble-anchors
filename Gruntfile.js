@@ -28,43 +28,15 @@ module.exports = function(grunt) {
         src: ['README.md'],
         dest: 'test/actual/'
       }
-    },
-
-    /**
-     * Pull down a list of repos from Github.
-     * (bundled with the readme task)
-     */
-    repos: {
-      assemble: {
-        options: {
-          username: 'assemble',
-          include: ['contrib'],
-          exclude: ['example', 'rss', 'anchors']
-        },
-        files: {
-          'docs/repos.json': ['repos?page=1&per_page=100']
-        }
-      }
-    },
-
-    /**
-     * Extend context for templates
-     * with repos.json
-     */
-    readme: {
-      options: {
-        metadata: ['docs/repos.json']
-      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-readme');
-  grunt.loadNpmTasks('grunt-repos');
-  grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-assemble');
+  grunt.loadNpmTasks('grunt-verb');
 
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'readme']);
+  grunt.registerTask('default', ['jshint', 'verb']);
 };

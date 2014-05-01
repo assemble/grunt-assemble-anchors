@@ -18,7 +18,7 @@ assemble: {
   foo: {
     options: {
       plugins: ['{%= name %}'],
-      {%= shortname %}: {
+      anchors: {
         template: './path/to/custom/template.js'
       }
     },
@@ -29,3 +29,25 @@ assemble: {
 
 
 Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
+
+## [grunt-assemble](https://github.com/assemble/grunt-assemble) configuration
+
+You can also use the plugin with specific targets:
+
+```js
+assemble: {
+  foo: {
+    options: {
+      plugins: ['{%= name %}'],
+      layout: 'blog-post.hbs'
+    },
+    files: {'dist/': 'content/*.md'}
+  },
+  // The plugin won't run on this target
+  bar: {
+    files: {'dist/': 'templates/*.hbs'}
+  }
+}
+```
+
+To disable the plugin, either remove it from the options or specify `anchors: {convert: false}` in the options.

@@ -12,40 +12,54 @@ var path = require('path');
 var cheerio = require('cheerio');
 var template = require('template');
 
-/**
- * Anchor Plugin
- * @param  {Object}   params
- * @param  {Function} callback
- */
-module.exports = function(params, callback) {
-  'use strict';
 
-  var opts = params.assemble.options.anchors || {};
+module.exports = function (assemble) {
 
-  // load current page content
-  var $ = cheerio.load(params.content);
+  /**
+   * Anchor Plugin
+   * @param  {Object}   params
+   * @param  {Function} next
+   */
+  var plugin = function (params, next) {
+    'use strict';
 
-  var tmpl = require('./lib/template.js');
+    var opts = assemble.options.anchors || {};
 
-  // If a template is specified in the options, use that instead.
-  if(opts && opts.template) {
-    opts.template = path.resolve(opts.template);
-    tmpl = require(opts.template);
-  }
+    // load current page content
+    var $ = cheerio.load(params.page.content);
 
-  // get all the h tags with an id
-  var headings = $('h1[id],h2[id],h3[id],h4[id]');
-  headings.map(function(i, e) {
-    if(e.attribs.id) {
-      var anchor = template(tmpl, {id: e.attribs.id});
+    var tmpl = require('./lib/template.js');
 
-      $(this).append(anchor);
-      $(this).removeAttr('id').addClass('docs-heading');
+    // If a template is specified in the options, use that instead.
+    if(opts && opts.template) {
+      opts.template = path.resolve(opts.template);
+      tmpl = require(opts.template);
     }
-  });
 
-  params.content = $.html();
-  callback();
+    // get all the h tags with an id
+    var headings = $('h1[id],h2[id],h3[id],h4[id]');
+    headings.map(function(i, e) {
+      if(e.attribs.id) {
+        var anchor = template(tmpl, {id: e.attribs.id});
+
+        $(this).append(anchor);
+        $(this).removeAttr('id').addClass('docs-heading');
+      }
+    });
+
+    params.page.content = $.html();
+    next();
+  };
+
+  // Define plugin options for Assemble
+  plugin.options = {
+    name: 'assemble-plugin-anchors',
+    events: [
+      'page:after:render'
+    ]
+  };
+
+  var rtn = {};
+  rtn[plugin.options.name] = plugin;
+  return rtn;
 };
-
-module.exports.options = options;

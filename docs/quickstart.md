@@ -4,12 +4,10 @@ In the command line, run:
 npm install {%= name %} --save
 ```
 
-Next, register the plugin with Assemble in your project's Gruntfile:
+Next, register the plugin with Assemble:
 
 ```js
-assemble: {
-  options: {
-    plugins: ['{%= name %}', 'other/plugins/*']
-  }
-}
+var options = {
+  plugins: ['{%= name %}', 'other/plugins/*']
+};
 ```
