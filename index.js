@@ -4,10 +4,6 @@
  * Licensed under the MIT license.
  */
 
-var options = {
-  stage: 'render:post:page'
-};
-
 var path = require('path');
 var cheerio = require('cheerio');
 var template = require('template');
