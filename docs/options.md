@@ -14,15 +14,10 @@ module.exports = [
 To use a custom template just specify it in the options as follows:
 
 ```js
-assemble: {
-  foo: {
-    options: {
-      plugins: ['{%= name %}'],
-      {%= shortname %}: {
-        template: './path/to/custom/template.js'
-      }
-    },
-    files: {'dist/': 'content/*.md'}
+options: {
+  plugins: ['{%= name %}'],
+  anchors: {
+    template: './path/to/custom/template.js'
   }
 }
 ```
