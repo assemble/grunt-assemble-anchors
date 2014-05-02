@@ -1,0 +1,41 @@
+<li> <a href="./">Overview</a> </li>
+<li>
+  <a href="#helpers-special">Special Helpers</a>
+  <ul class="nav">
+    <li> <a href="helper-compose.html">Compose</a> </li>
+    <li> <a href="helper-aggregate.html">Aggregate</a> </li>
+  </ul>
+</li>
+<li>
+  <a href="#helper-categories">Categories</a>
+  <ul class="nav">
+    <li> <a href="helpers-code.html">Code</a> </li>
+    <li> <a href="helpers-collections.html">Collections</a> </li>
+    <li> <a href="helpers-comparison.html">Comparison</a> </li>
+    <li> <a href="helpers-content.html">Content</a> </li>
+    <li> <a href="helpers-data.html">Data</a> </li>
+    <li> <a href="helpers-dates.html">Dates</a> </li>
+    <li> <a href="helpers-html.html">HTML</a> </li>
+    <li> <a href="helpers-inflections.html">Inflections</a> </li>
+    <li> <a href="helpers-logging.html">Logging</a> </li>
+    <li> <a href="helpers-markdown.html">Markdown</a> </li>
+    <li> <a href="helpers-math.html">Math</a> </li>
+    <li> <a href="helpers-misc.html">Miscellaneous</a> </li>
+    <li> <a href="helpers-numbers.html">Numbers</a> </li>
+    <li> <a href="helpers-path.html">Path</a> </li>
+    <li> <a href="helpers-readme.html">Readme</a> </li>
+    <li> <a href="helpers-strings.html">Strings</a> </li>
+    <li> <a href="helpers-url.html">URL</a> </li>
+  </ul>
+</li>
+
+
+{{!TODO: add sections for swig filters and lodash mixins }}
+
+{{! <ul class="nav nav-pills nav-stacked"> }}
+  {{!#each pages}}
+    {{!#is data.area "helpers"}}
+      {{!> sidenav-link }}
+    {{!/is}}
+  {{!/each}}
+{{! </ul> }}

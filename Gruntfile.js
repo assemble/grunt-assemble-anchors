@@ -10,8 +10,13 @@
 
 module.exports = function(grunt) {
 
+  var pretty = require('pretty');
+
   // Project configuration.
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    vendor: grunt.file.readJSON('.bowerrc').directory,
+    site: grunt.file.readYAML('example/_config.yml'),
     jshint: {
       all: ['Gruntfile.js', 'index.js'],
       options: {
@@ -19,23 +24,37 @@ module.exports = function(grunt) {
       }
     },
 
+    // Build HTML from templates and data
     assemble: {
       options: {
-        layout: 'test/fixtures/layout.hbs',
-        plugins: ['./index.js'],
+        flatten: true,
+        site: '<%= site %>',
+        assets: '_gh_pages/assets',
+        partials: ['example/templates/includes/*.hbs'],
+        helpers: ['handlebars-helper-pkg', 'example/helpers/**/*.js'],
+        layouts: 'example/templates/layouts',
+        postprocess: pretty
       },
-      test: {
-        src: ['README.md'],
-        dest: 'test/actual/'
+      example: {
+        options: {
+          plugins: ['./'],
+        },
+        files: {'_gh_pages/': ['example/templates/*.hbs']}
       }
+    },
+
+    clean: {
+      example: ['_gh_pages/*.html']
     }
+
   });
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-verb');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'verb']);
+  grunt.registerTask('default', ['jshint', 'assemble', 'verb']);
 };
