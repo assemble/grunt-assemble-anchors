@@ -1,8 +1,8 @@
-# assemble-contrib-anchors [![NPM version](https://badge.fury.io/js/assemble-contrib-anchors.png)](http://badge.fury.io/js/assemble-contrib-anchors)
+# assemble-middleware-anchors [![NPM version](https://badge.fury.io/js/assemble-middleware-anchors.png)](http://badge.fury.io/js/assemble-middleware-anchors)
 
 > Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.
 
-**Heads up!** v0.2.0 or greater of this plugin depend on Assemble v0.5.0. _This plugin will not work with Assemble v0.4.0!_
+**Upgrade notice!** v0.2.0 or greater of this plugin depend on Assemble v0.5.0. _This plugin will not work with Assemble v0.4.0!_
 
 ## Example
 ### Before
@@ -31,14 +31,14 @@ Visit the [anchors example repo](https://github.com/assemble/example-assemble-an
 In the command line, run:
 
 ```bash
-npm install assemble-contrib-anchors --save
+npm install assemble-middleware-anchors --save
 ```
 
 Next, register the plugin with Assemble:
 
 ```js
 var options = {
-  plugins: ['assemble-contrib-anchors', 'other/plugins/*']
+  plugins: ['assemble-middleware-anchors', 'other/plugins/*']
 };
 ```
 
@@ -60,7 +60,7 @@ To use a custom template just specify it in the options as follows:
 
 ```js
 options: {
-  plugins: ['assemble-contrib-anchors'],
+  plugins: ['assemble-middleware-anchors'],
   anchors: {
     template: './path/to/custom/template.js'
   }
@@ -73,27 +73,27 @@ Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help 
 ## Other Assemble plugins
 Here are some related projects you might be interested in from the [Assemble](http://assemble.io) core team.
 
-+ [assemble-plugin-blog](https://api.github.com/repos/assemble/assemble-plugin-blog): Assemble plugin for generating blog pages for posts and archive list pages.
-+ [assemble-plugin-drafts](https://api.github.com/repos/assemble/assemble-plugin-drafts): Assemble plugin (v0.5.0) for preventing drafts from being rendered.
-+ [assemble-plugin-pagination](https://api.github.com/repos/assemble/assemble-plugin-pagination): WIP this plugin isn't ready for use!
-+ [assemble-plugin-rss](https://api.github.com/repos/assemble/assemble-plugin-rss): NOT Published yet! This plugin isn't ready for prime time! Plugin for creating RSS feeds with Assemble, the static site generator for Node.js, Grunt.js and Yeoman.
-+ [generator-plugin](https://api.github.com/repos/assemble/generator-plugin): Yeoman generator for Assemble plugins.
-+ [grunt-init-assemble-plugin](https://api.github.com/repos/assemble/grunt-init-assemble-plugin): Generate a plugin for Assemble.
-+ [plugins](https://api.github.com/repos/assemble/plugins): Collection of contrib plugins maintained by the Assemble core team.
-+ [assemble-contrib-lunr-examples](https://api.github.com/repos/assemble/assemble-contrib-lunr-examples): Usages examples for assemble-contrib-lunr, a search plugin for Assemble.
-+ [assemble-contrib-markdown](https://api.github.com/repos/assemble/assemble-contrib-markdown): HEADS UP! This isn't ready for prime time! Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios.
-+ [assemble-contrib-navigation](https://api.github.com/repos/assemble/assemble-contrib-navigation): Assemble plugin for automatically generating Bootstrap-style side navigation.
-+ [assemble-contrib-permalinks](https://api.github.com/repos/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more.
-+ [assemble-contrib-sitemap](https://api.github.com/repos/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble
-+ [assemble-contrib-toc](https://api.github.com/repos/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js
-+ [assemble-contrib-toc-example](https://api.github.com/repos/assemble/assemble-contrib-toc-example): Example for generating a Table of Contents using Assemble.
-+ [assemble-contrib-wordcount](https://api.github.com/repos/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages.
++ [assemble-plugin-blog](https://api.github.com/repos/assemble/assemble-plugin-blog): Assemble plugin for generating blog pages for posts and archive list pages. 
++ [assemble-plugin-drafts](https://api.github.com/repos/assemble/assemble-plugin-drafts): Assemble plugin (v0.5.0) for preventing drafts from being rendered. 
++ [assemble-plugin-pagination](https://api.github.com/repos/assemble/assemble-plugin-pagination): WIP this plugin isn't ready for use! 
++ [assemble-plugin-rss](https://api.github.com/repos/assemble/assemble-plugin-rss): NOT Published yet! This plugin isn't ready for prime time! Plugin for creating RSS feeds with Assemble, the static site generator for Node.js, Grunt.js and Yeoman.  
++ [generator-plugin](https://api.github.com/repos/assemble/generator-plugin): Yeoman generator for Assemble plugins.  
++ [grunt-init-assemble-plugin](https://api.github.com/repos/assemble/grunt-init-assemble-plugin): Generate a plugin for Assemble. 
++ [plugins](https://api.github.com/repos/assemble/plugins): Collection of contrib plugins maintained by the Assemble core team. 
++ [assemble-contrib-lunr-examples](https://api.github.com/repos/assemble/assemble-contrib-lunr-examples): Usages examples for assemble-contrib-lunr, a search plugin for Assemble. 
++ [assemble-contrib-markdown](https://api.github.com/repos/assemble/assemble-contrib-markdown): HEADS UP! This isn't ready for prime time! Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios. 
++ [assemble-contrib-navigation](https://api.github.com/repos/assemble/assemble-contrib-navigation): Assemble plugin for automatically generating Bootstrap-style side navigation.  
++ [assemble-contrib-permalinks](https://api.github.com/repos/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more. 
++ [assemble-contrib-sitemap](https://api.github.com/repos/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble 
++ [assemble-contrib-toc](https://api.github.com/repos/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js 
++ [assemble-contrib-toc-example](https://api.github.com/repos/assemble/assemble-contrib-toc-example): Example for generating a Table of Contents using Assemble. 
++ [assemble-contrib-wordcount](https://api.github.com/repos/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages. 
 
 Visit [assemble.io/plugins](http:/assemble.io/plugins/) for more information about [Assemble](http:/assemble.io/) plugins.
 
 
 ## Contributing
-Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble-contrib-anchors/issues).
+Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble-middleware-anchors/issues).
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality,
 and run `docs` in the command line to build the docs with [Verb](https://github.com/assemble/verb).
@@ -105,10 +105,11 @@ Pull requests are also encouraged, and if you find this project useful please co
 **Brian Woodward**
 
 + [github/doowb](https://github.com/doowb)
-+ [twitter/doowb](http://twitter.com/jonschlinkert)
++ [twitter/doowb](http://twitter.com/doowb)
+
 
 ## License
-Copyright (c) 2014 Brian Woodward, contributors.
+Copyright (c) 2014 Brian Woodward, contributors.  
 Released under the MIT license
 
 ***

@@ -1,0 +1,51 @@
+<!-- Core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ assets }}/js/jquery.js"></script>
+<script src="{{ assets }}/js/bootstrap.js"></script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="{{ assets }}/js/holder.js"></script>
+<script src="{{ assets }}/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="{{ assets }}/js/application.js"></script>
+
+{{#if site.google.siteid}}
+<!-- Analytics
+================================================== -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '{{site.google.siteid}}');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+{{/if}}
+
+<!-- Anchors
+================================================== -->
+<script>
+  // $(document).ready(function () {
+
+  //   var id = '';
+  //   var anchor = [
+  //     '<a name="' + id + '" class="anchor" href="#' + id + '">',
+  //     '  <span class="glyphicon glyphicon-link"></span>',
+  //     '</a>\n'
+  //   ].join('\n');
+
+  //   $(anchor).appendTo('h1,h2,h3,h4');
+  //   $('h1,h2,h3,h4').hover(function(){
+  //     if($(this).prop('id')) {
+  //       $('.anchor').prop("href", '#' + this.id);
+  //     }
+  //   });
+
+  // });
+</script>
