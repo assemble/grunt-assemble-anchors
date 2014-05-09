@@ -48,12 +48,6 @@ module.exports = function (assemble) {
   };
 
   // Define middleware options for Assemble
-  //middleware.options = {
-  //  name: 'assemble-middleware-anchors',
-  //  events: [
-  //    'page:after:render'
-  //  ]
-  //};
   middleware.event = 'page:after:render';
 
   return {
