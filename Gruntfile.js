@@ -1,8 +1,8 @@
 /*
- * assemble-contrib-anchors
- * https://github.com/assemble/assemble-contrib-anchors
+ * grunt-assemble-anchors
+ * https://github.com/assemble/grunt-assemble-anchors
  *
- * Copyright (c) 2013 Jon Schlinkert, Brian Woodward, contributors
+ * Copyright (c) 2013-2015 Jon Schlinkert, Brian Woodward, contributors
  * Licensed under the MIT license.
  */
 
@@ -53,8 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-assemble');
-  grunt.loadNpmTasks('grunt-verb');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'assemble', 'verb']);
+  grunt.registerTask('default', ['jshint', 'assemble']);
 };
