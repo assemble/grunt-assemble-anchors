@@ -22,13 +22,13 @@
   },
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-assemble": "~0.1.11",
+    "grunt-assemble": "^0.4.0",
+    "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-verb": "~0.2.1",
+    "handlebars-helper-pkg": "^0.2.0",
     "handlebars-helper-prettify": "~0.2.1",
     "pretty": "^0.1.2",
-    "handlebars-helper-pkg": "^0.2.0",
-    "grunt-contrib-clean": "^0.5.0",
     "relative": "^0.1.4"
   },
   "dependencies": {
