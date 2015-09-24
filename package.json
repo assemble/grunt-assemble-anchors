@@ -48,5 +48,12 @@
     "markdown",
     "plugin",
     "tag"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "grunt-assemble-anchors"
+      ]
+    }
+  }
 }
