@@ -1,6 +1,6 @@
 {
   "name": "grunt-assemble-anchors",
-  "version": "0.2.4",
+  "version": "0.1.0",
   "description": "Assemble plugin for creating anchor tags from headings in generated html using Cheerio.js.",
   "main": "index.js",
   "repository": {
